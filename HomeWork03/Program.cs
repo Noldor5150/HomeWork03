@@ -10,10 +10,11 @@ namespace HomeWork03.Game
     {
         static void Main(string[] args)
         {
+            // init game
             GameScreen myGame = new GameScreen(30, 20);
 
+            // fill game with game data.
             myGame.SetHero(new Hero(5, 5, "HERO"));
-
             Random rnd = new Random();
             int enemyCount = 0;
             for (int i = 0; i < 10; i++)
@@ -22,20 +23,38 @@ namespace HomeWork03.Game
                 enemyCount++;
             }
 
-            myGame.Render();
+            // render loop
+            bool needToRender = true;
 
-            myGame.MoveHeroLeft();
-            myGame.MoveAllEnemiesDown();
-
-            Enemy secondEnemy = myGame.GetEnemyById(1);
-            if (secondEnemy != null)
+            do
             {
-                secondEnemy.MoveDown();
-            }
+                // set clean screen
+                Console.Clear();
 
-            myGame.Render();
+                while (Console.KeyAvailable)
+                {
+                    ConsoleKeyInfo pressedChar = Console.ReadKey(true);
+                    int hashCode = pressedChar.Key.GetHashCode();
 
-            Console.ReadKey();
+                    switch (pressedChar.Key)
+                    {
+                        case ConsoleKey.Escape:
+                            needToRender = false;
+                            break;
+                        case ConsoleKey.RightArrow:
+                            myGame.MoveHeroRight();
+                            break;
+                        case ConsoleKey.LeftArrow:
+                            myGame.MoveHeroLeft();
+                            break;
+                    }
+                }
+
+                myGame.Render();
+
+                // padarom pause. (parodom ekrana).
+                System.Threading.Thread.Sleep(250);
+            } while (needToRender);
 
         }
     }
