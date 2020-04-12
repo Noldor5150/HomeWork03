@@ -15,7 +15,7 @@ namespace HomeWork03.Gui
             this.renderChar = renderChar;
         }
 
-        public void Render()
+        public override void Render()
         {
             for (int i = 0; i < height; i++)
             {

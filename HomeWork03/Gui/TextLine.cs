@@ -15,7 +15,7 @@ namespace HomeWork03.Gui
             this.data = data;
         }
 
-        public void Render()
+        public override void Render()
         {
             Console.SetCursorPosition(x, y);
             if (width > data.Length)

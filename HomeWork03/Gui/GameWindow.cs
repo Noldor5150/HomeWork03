@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HomeWork03.Gui
 {
-    class GameWindow : Window
+    sealed class GameWindow : Window
     {
         private Button startButton;
         private Button creditsButton;
@@ -26,7 +26,7 @@ namespace HomeWork03.Gui
             quitButton = new Button(80, 13, 18, 5, "Quit");
         }
 
-        public void Render()
+        public override void Render()
         {
             base.Render();
 

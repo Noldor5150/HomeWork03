@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HomeWork03.Gui
 {
-    class CreditWindow : Window
+    sealed class CreditWindow : Window
     {
         private Button backButton;
 
@@ -37,7 +37,7 @@ namespace HomeWork03.Gui
             backButton.SetActive();
         }
 
-        public void Render()
+        public override void Render()
         {
             base.Render();
             creditTextBlock.Render();

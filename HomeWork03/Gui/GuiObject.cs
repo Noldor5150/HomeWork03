@@ -9,7 +9,7 @@ namespace HomeWork03.Gui
 
 
 {
-    class GuiObject
+    abstract class GuiObject
     {
         protected int x;
         protected int y;
@@ -23,5 +23,7 @@ namespace HomeWork03.Gui
             this.width = width;
             this.height = height;
         }
+
+        abstract public void Render();
     }
 }

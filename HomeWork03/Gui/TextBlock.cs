@@ -18,7 +18,7 @@ namespace HomeWork03.Gui
             }
         }
 
-        public void Render()
+        public override void Render()
         {
             for (int i = 0; i < textBlocks.Count; i++)
             {

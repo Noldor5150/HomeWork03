@@ -22,7 +22,7 @@ namespace HomeWork03.Gui
             this.textLine = new TextLine(x + 1, y + 1 + ((height - 2) / 2), width - 2, buttonText);
         }
 
-        public void Render()
+        public override void Render()
         {
             if (isActive)
             {
