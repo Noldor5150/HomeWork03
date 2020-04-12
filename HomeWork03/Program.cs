@@ -10,38 +10,30 @@ namespace HomeWork03.Game
     {
         static void Main(string[] args)
         {
-            int enemyCount = 0;
-            Random rnd = new Random();
+            GameScreen myGame = new GameScreen(30, 20);
 
-            // create
-            Hero myHero = new Hero(5, 5, "HERO");
-            List<Enemy> enemies = new List<Enemy>();
+            myGame.SetHero(new Hero(5, 5, "HERO"));
+
+            Random rnd = new Random();
+            int enemyCount = 0;
             for (int i = 0; i < 10; i++)
             {
-                enemies.Add(new Enemy(enemyCount, rnd.Next(0, 10), rnd.Next(0, 10), "enemy" + enemyCount));
+                myGame.AddEnemy(new Enemy(enemyCount, rnd.Next(0, 10), rnd.Next(0, 10), "enemy" + enemyCount));
                 enemyCount++;
             }
 
-            // print
-            myHero.PrintInfo();
-            foreach (Enemy enemy in enemies)
+            myGame.Render();
+
+            myGame.MoveHeroLeft();
+            myGame.MoveAllEnemiesDown();
+
+            Enemy secondEnemy = myGame.GetEnemyById(1);
+            if (secondEnemy != null)
             {
-                enemy.PrintInfo();
+                secondEnemy.MoveDown();
             }
 
-            // move
-            myHero.MoveLeft();
-            foreach (Enemy enemy in enemies)
-            {
-                enemy.MoveDown();
-            }
-
-            // print
-            myHero.PrintInfo();
-            foreach (Enemy enemy in enemies)
-            {
-                enemy.PrintInfo();
-            }
+            myGame.Render();
 
             Console.ReadKey();
 

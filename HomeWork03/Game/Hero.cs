@@ -31,5 +31,7 @@ namespace HomeWork03.Game
         {
             Console.WriteLine($" Hero {name} is at {x}x{y}");
         }
+
+       
     }
 }

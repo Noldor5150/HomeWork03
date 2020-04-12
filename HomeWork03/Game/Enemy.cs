@@ -29,5 +29,10 @@ namespace HomeWork03.Game
         {
             Console.WriteLine($" Enemy {name} is at {x}x{y}");
         }
+
+        public int GetId()
+        {
+            return id;
+        }
     }
 }
