@@ -6,7 +6,9 @@ namespace HomeWork03
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World TEst One!");
+            Console.WriteLine("Hello World TEst Oneasdsasdsasdsasdsdsasds!");
+            Console.WriteLine("Hello World TEst Oneasdsasdsasdsasdsdsasds!");
+            Console.WriteLine("Hello World TEst Oneasdsasdsasdsasdsdsasds!");
         }
     }
 }
