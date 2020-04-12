@@ -4,17 +4,13 @@ using System.Text;
 
 namespace HomeWork03.Game
 {
-    class Hero
+    class Hero : Unit
     {
-        private int x;
-        private int y;
-        private string name;
+    
 
-        public Hero(int x, int y, string name)
+        public Hero(int x, int y, string name) : base( x, y, name)
         {
-            this.x = x;
-            this.y = y;
-            this.name = name;
+         
         }
 
         public void MoveRight()
@@ -27,10 +23,7 @@ namespace HomeWork03.Game
             x--;
         }
 
-        public void PrintInfo()
-        {
-            Console.WriteLine($" Hero {name} is at {x}x{y}");
-        }
+     
 
        
     }

@@ -4,20 +4,16 @@ using System.Text;
 
 namespace HomeWork03.Game
 {
-    class Enemy
+    class Enemy: Unit
     {
         private int id;
-        private int x;
-        private int y;
-        private string name;
+   
 
 
-        public Enemy(int id, int x, int y, string name)
+        public Enemy(int id, int x, int y, string name):base(x,y,name)
         {
             this.id = id;
-            this.x = x;
-            this.y = y;
-            this.name = name;
+         
         }
 
         public void MoveDown()
@@ -25,10 +21,7 @@ namespace HomeWork03.Game
             y++;
         }
 
-        public void PrintInfo()
-        {
-            Console.WriteLine($" Enemy {name} is at {x}x{y}");
-        }
+      
 
         public int GetId()
         {
