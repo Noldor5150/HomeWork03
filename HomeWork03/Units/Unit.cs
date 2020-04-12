@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace HomeWork03.Game
+namespace HomeWork03.Units
 {
     class Unit
     {

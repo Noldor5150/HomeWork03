@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace HomeWork03.Game
+namespace HomeWork03.Units
 {
     class Hero : Unit
     {
@@ -22,9 +22,12 @@ namespace HomeWork03.Game
         {
             x--;
         }
+        public int GetX()
+        {
+            return x;
+        }
 
-     
 
-       
+
     }
 }

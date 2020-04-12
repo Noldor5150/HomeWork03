@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using HomeWork03.Units;
+
 
 namespace HomeWork03.Game
 {
@@ -26,12 +28,18 @@ namespace HomeWork03.Game
 
         public void MoveHeroLeft()
         {
-            hero.MoveLeft();
+            if (hero.GetX() > 0)
+            {
+                hero.MoveLeft();
+            }
         }
 
         public void MoveHeroRight()
         {
-            hero.MoveRight();
+            if (hero.GetX() < width)
+            {
+                hero.MoveRight();
+            }
         }
 
         public void AddEnemy(Enemy enemy)
