@@ -11,10 +11,10 @@ namespace HomeWork03.Gui
 {
     abstract class GuiObject
     {
-        protected int x;
-        protected int y;
-        protected int width;
-        protected int height;
+        public int x { get; set; }
+        public int y { get; set; }
+        public int width { get; set; }
+        public int height { get; set; }
 
         public GuiObject(int x, int y, int width, int height)
         {

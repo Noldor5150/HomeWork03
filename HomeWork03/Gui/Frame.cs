@@ -12,7 +12,16 @@ namespace HomeWork03.Gui
 
         public Frame(int x, int y, int width, int height, char renderChar) : base(x, y, width, height)
         {
-            this.renderChar = renderChar;
+            RenderChar = renderChar;
+        }
+        public char RenderChar
+        {
+            get { return renderChar; }
+            set
+            {
+                renderChar = value;
+                Render();
+            }
         }
 
         public override void Render()
@@ -24,18 +33,18 @@ namespace HomeWork03.Gui
                 {
                     for (int j = 0; j < width; j++)
                     {
-                        Console.Write(renderChar);
+                        Console.Write(RenderChar);
                     }
                 }
                 else
                 {
-                    Console.Write(renderChar);
+                    Console.Write(RenderChar);
                     for (int j = 0; j < width - 2; j++)
                     {
                         Console.Write(' ');
                     }
 
-                    Console.Write(renderChar);
+                    Console.Write(RenderChar);
                 }
             }
         }

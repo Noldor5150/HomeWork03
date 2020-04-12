@@ -8,26 +8,38 @@ namespace HomeWork03.Gui
 {
     class TextLine : GuiObject
     {
-        private string data;
+        private string label;
 
-        public TextLine(int x, int y, int width, string data) : base(x, y, width, 0)
+        public TextLine(int x, int y, int width, string label) : base(x, y, width, 0)
         {
-            this.data = data;
+            Label = label ;
+        }
+        public string Label
+        {
+            get
+            {
+                return label;
+            }
+            set
+            {
+                label = value;
+                Render();
+            }
         }
 
         public override void Render()
         {
             Console.SetCursorPosition(x, y);
-            if (width > data.Length)
+            if (width > Label.Length)
             {
-                int offset = (width - data.Length) / 2;
+                int offset = (width - Label.Length) / 2;
                 for (int i = 0; i < offset; i++)
                 {
                     Console.Write(' ');
                 }
             }
 
-            Console.Write(data);
+            Console.Write(Label);
         }
     }
 }

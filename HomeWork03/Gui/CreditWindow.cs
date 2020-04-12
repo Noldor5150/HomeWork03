@@ -26,8 +26,8 @@ namespace HomeWork03.Gui
             creditData.Add("\'Art\':");
             creditData.Add("Unknown");
             creditData.Add("");
-            creditData.Add("Marketingas:");
-            creditData.Add("Unknown");
+            creditData.Add("Label:");
+            creditData.Add("C# Wizzards Guild");
             creditData.Add("");
 
             creditTextBlock = new TextBlock(28 + 1, 10 + 1, 60 - 1, creditData);

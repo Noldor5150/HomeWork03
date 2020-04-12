@@ -8,10 +8,19 @@ namespace HomeWork03.Gui
 {
     class Button : GuiObject
     {
+        public bool isActive { get; private set; } = false;
+
+        public string Label
+        {
+            get { return textLine.Label; }
+            set { textLine.Label = value; }
+        }
+
+        private string label = "";
         private Frame notActiveFrame;
         private Frame activeFrame;
 
-        private bool isActive = false;
+        
         private TextLine textLine;
 
         public Button(int x, int y, int width, int height, string buttonText) : base(x, y, width, height)
