@@ -19,6 +19,7 @@ namespace HomeWork03.Gui
         private string label = "";
         private Frame notActiveFrame;
         private Frame activeFrame;
+        public readonly string buttonName;
 
         
         private TextLine textLine;
@@ -29,6 +30,7 @@ namespace HomeWork03.Gui
             this.activeFrame = new Frame(x, y, width, height, '-');
 
             this.textLine = new TextLine(x + 1, y + 1 + ((height - 2) / 2), width - 2, buttonText);
+            this.buttonName = buttonText;
         }
 
         public override void Render()
@@ -48,6 +50,11 @@ namespace HomeWork03.Gui
         public void SetActive()
         {
             isActive = true;
+        }
+
+        public void SetNotActive()
+        {
+            isActive = false;
         }
     }
 }

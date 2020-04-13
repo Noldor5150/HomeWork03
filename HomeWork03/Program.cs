@@ -12,7 +12,10 @@ namespace HomeWork03.Game
     {
         static void Main()
         {
-            Console.CursorVisible = false;
+            GuiController guiController = new GuiController();
+            guiController.ShowMenu();
+
+         /*   Console.CursorVisible = false;
 
             GameWindow gameWindow = new GameWindow();
             gameWindow.Render();
@@ -21,7 +24,7 @@ namespace HomeWork03.Game
             creditWindow.Render();
 
             Console.ReadKey();
-            /*GameController myGame = new GameController();
+            GameController myGame = new GameController();
             myGame.StartGame();*/
         }
     }

@@ -5,4 +5,9 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Gui\Interfaces\NewFile1.txt" />
+    <None Remove="Gui\NewFile1.txt" />
+  </ItemGroup>
+
 </Project>

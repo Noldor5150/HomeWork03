@@ -8,22 +8,22 @@ namespace HomeWork03.Gui
 {
     sealed class GameWindow : Window
     {
-        private Button startButton;
-        private Button creditsButton;
-        private Button quitButton;
+   
         private TextBlock titleTextBlock;
+        private List<Button> buttons;
 
 
         public GameWindow() : base(0, 0, 120, 30, '<')
         {
             titleTextBlock = new TextBlock(10, 5, 100, new List<String> { "Hyper Turbo Game", "Created by C# Wizzards Guild", "Made in Minas Tirith" });
+            this.buttons = new List<Button>
+            {
+                new Button(20, 13, 18, 5, "Start"),
+                new Button(50, 13, 18, 5, "Credits"),
+                new Button(80, 13, 18, 5, "Quit")
+            };
 
-            startButton = new Button(20, 13, 18, 5, "Start");
-            startButton.SetActive();
-
-            creditsButton = new Button(50, 13, 18, 5, "Credits");
-
-            quitButton = new Button(80, 13, 18, 5, "Quit");
+            this.buttons[0].SetActive();
         }
 
         public override void Render()
@@ -32,11 +32,51 @@ namespace HomeWork03.Gui
 
             titleTextBlock.Render();
 
-            startButton.Render();
-            creditsButton.Render();
-            quitButton.Render();
+            foreach (Button button in this.buttons)
+            {
+                button.Render();
+            }
 
             Console.SetCursorPosition(0, 0);
+        }
+
+        public void SetPreviousButtonActive()
+        {
+            Button button = this.buttons.Where(x => x.isActive == true).Single();
+            int index = this.buttons.IndexOf(button);
+            buttons[index].SetNotActive();
+            if(index == 0)
+            {
+                index = this.buttons.Count() - 1;
+            }
+            else
+            {
+                index = index - 1;
+            }
+
+            buttons[index].SetActive();
+        }
+
+        public void SetNextButtonActive()
+        {
+            Button button = this.buttons.Where(x => x.isActive == true).Single();
+            int index = this.buttons.IndexOf(button);
+            buttons[index].SetNotActive();
+            if (index == this.buttons.Count() - 1)
+            {
+                index = 0;
+            }
+            else
+            {
+                index = index + 1;
+            }
+
+            buttons[index].SetActive();
+        }
+
+        public Button returnActiveButton()
+        {
+            return this.buttons.Where(x => x.isActive == true).Single();
         }
     }
 }
