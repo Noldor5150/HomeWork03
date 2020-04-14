@@ -1,4 +1,5 @@
-﻿using HomeWork03.Game;
+﻿using HomeWork03.Constants;
+using HomeWork03.Game;
 using HomeWork03.Gui.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -32,11 +33,11 @@ namespace HomeWork03.Gui
                 {
                     case ConsoleKey.Enter:
                         Button button = this.gameWindow.returnActiveButton();
-                        if (button.buttonName == "Start")
+                        if (button.buttonName == ButtonNames.StartButton)
                         {
                             this.gameController.StartGame();
                         }
-                        else if (button.buttonName == "Credits")
+                        else if (button.buttonName == ButtonNames.CreditsButton)
                         {
                             this.creditWindow.Render();
 
@@ -48,9 +49,8 @@ namespace HomeWork03.Gui
                                     break;
                                 }
                             } while (true);
-                            
                         }
-                        else
+                        else if(button.buttonName == ButtonNames.QuitButton)
                         {
                             Environment.Exit(0);
                         }
