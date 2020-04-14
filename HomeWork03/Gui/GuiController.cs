@@ -32,13 +32,23 @@ namespace HomeWork03.Gui
                 {
                     case ConsoleKey.Enter:
                         Button button = this.gameWindow.returnActiveButton();
-                        if(button.buttonName == "Start")
+                        if (button.buttonName == "Start")
                         {
                             this.gameController.StartGame();
                         }
                         else if (button.buttonName == "Credits")
                         {
                             this.creditWindow.Render();
+
+                            do
+                            {
+                                ConsoleKeyInfo pressedChar1 = Console.ReadKey();
+                                if (pressedChar1.Key == ConsoleKey.Enter || pressedChar1.Key == ConsoleKey.Escape)
+                                {
+                                    break;
+                                }
+                            } while (true);
+                            
                         }
                         else
                         {

@@ -5,9 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace HomeWork03.Gui
-
-
-
 {
     abstract class GuiObject
     {
